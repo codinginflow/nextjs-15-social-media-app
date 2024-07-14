@@ -127,3 +127,7 @@ export interface BookmarkInfo {
 export interface NotificationCountInfo {
   unreadCount: number;
 }
+
+export interface MessageCountInfo {
+  unreadCount: number;
+}

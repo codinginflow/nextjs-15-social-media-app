@@ -6,7 +6,6 @@ const nextConfig = {
     },
   },
   serverExternalPackages: ["@node-rs/argon2"],
-<<<<<<< Updated upstream
   images: {
     remotePatterns: [
       {
@@ -24,8 +23,6 @@ const nextConfig = {
       },
     ];
   },
-=======
->>>>>>> Stashed changes
 };
 
 export default nextConfig;

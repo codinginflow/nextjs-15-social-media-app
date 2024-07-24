@@ -16,6 +16,7 @@ datasource db {
 }
 
 model User {
+<<<<<<< Updated upstream
   id                    String         @id
   username              String         @unique
   displayName           String
@@ -35,6 +36,19 @@ model User {
   issuedNotifications   Notification[] @relation("Issuer")
 
   createdAt DateTime @default(now())
+=======
+  id           String    @id
+  username     String    @unique
+  displayName  String
+  email        String?   @unique
+  passwordHash String?
+  googleID     String?   @unique
+  avatarUrl    String?
+  bio          String?
+  sessions     Session[]
+
+  createAt DateTime @default(now())
+>>>>>>> Stashed changes
 
   @@map("users")
 }
@@ -43,6 +57,7 @@ model Session {
   id        String   @id
   userId    String
   expiresAt DateTime
+<<<<<<< Updated upstream
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("sessions")
@@ -147,4 +162,9 @@ enum NotificationType {
   LIKE
   FOLLOW
   COMMENT
+=======
+  User      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+@@map("sessions")
+>>>>>>> Stashed changes
 }
